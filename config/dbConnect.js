@@ -3,8 +3,8 @@
 // mongoose is an ORM
 
 const mongoose = require("mongoose");
-const url = "mongodb+srv://irfanusuf33:stylehouse4424@stylehouse.rcc8j.mongodb.net/?retryWrites=true&w=majority&appName=stylehouse"
-// const url = "mongodb://localhost:27017/bookStore"
+// const url = "mongodb+srv://irfanusuf33:stylehouse4424@stylehouse.rcc8j.mongodb.net/?retryWrites=true&w=majority&appName=stylehouse"
+const url = "mongodb://localhost:27017/shopFusion"
 
 const connectDB = async () => {
   try {

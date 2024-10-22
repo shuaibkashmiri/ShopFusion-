@@ -4,9 +4,9 @@ const Item = require("../models/itemModel");
 const errorHandler = require("../utils/feature");
 
 cloudinary.config({
-  cloud_name: "dbo0xmbd7",
-  api_key: "717735839128615",
-  api_secret: "fqcjtd3HxpH_t1dAEtqr595ULW0",
+  cloud_name: "dd2vlnfgs",
+  api_key: "531876431988962",
+  api_secret: "lwzjW9tesZ0SF7W-1n1EFUmE9sg",
 });
 
 const createProduct = async (req, res) => {
