@@ -10,10 +10,22 @@ const Product = mongoose.model("Product" , {
     size : String,
     color : String,
     price : Number,
-    discount : Number,
+    discount : Number,  
     itemQty : Number,
     description : String,
     imageUrl : String,
+    rating: { type: Number, default: 0 }, 
+    reviews : [
+        {
+            user: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
+            review : {type : String},
+            star : {type : Number}
+        }
+    ]
+    
+   
+    
+
 })
 
 

@@ -33,7 +33,7 @@
           <li><a href="/accessories">Accesories</a></li>
           <li><a href="/services">Our Services</a></li>
           <li><a href="/about">About Us</a></li>
-          <li><a href="./assets/catalog.pdf" download>Download Catalog</a></li>
+          <li><a href="/assets/catalog.pdf" download>Download Catalog</a></li>
 
         </ul>
 
@@ -58,7 +58,8 @@
               <a href="/user/dashboard/">
                 <img src="/assets/user.svg" alt="user-icon" /></a>
             {{else}}
-              <a href="/user/login"><img
+              <a href="/user/login">
+              <img
                   src="/assets/user.svg"
                   alt="user icon"
                 /></a>
@@ -70,7 +71,8 @@
               <img src="/assets/cart.svg" alt="cart icon" />
             </a>
             {{#if username}}
-              <span style="color: aliceblue;">{{cart.length}}</span>
+              <span style="color: aliceblue;">
+                {{cart.length}}</span>
             {{/if}}
           </li>
 
@@ -81,15 +83,15 @@
       <div class="lower-menu">
 
         <span>
-          Free Shipping over 80$
+          <a style="color: rgb(206, 87, 87); text-decoration : none" href="/shipping-policy">Free Shipping over 80$</a>  
         </span>
 
         <span>
-          Next Day Click & Collect
+           <a style="color: rgb(206, 87, 87); text-decoration : none" href="/nextDayCollect">  Next Day Click & Collect </a>
         </span>
 
         <span>
-          30 days Hassle Free Return
+           <a style="color: rgb(206, 87, 87); text-decoration : none" href="/return-policy"> 30 days Hassle Free Return </a>
         </span>
 
         {{#if username}}
@@ -107,6 +109,12 @@
               <li>
                 <a id="logout" href="/user/logout"> Logout </a>
               </li>
+
+
+              <li>
+                <a id="orders" href="/user/orders"> Orders </a>
+              </li>
+            
             </ul>
 
           </div>
@@ -116,19 +124,53 @@
       </div>
 
     </div>
+
+
+
   </div>
 </header>
 
 <script>
+
+
+document.addEventListener("DOMContentLoaded", () => {
+
   const target = document.getElementById("target_div");
   const hamburger = document.getElementById("hamburger");
   const close = document.getElementById("close");
 
-  hamburger.addEventListener("click", () => {
-    target.style.display = "block"
-  });
-   close.addEventListener("click", () => {
-    target.style.display = "none"
-  });
+  if (hamburger) {
+    hamburger.addEventListener("click", () => {
+      target.style.display = "block";
+     // console.log("Hamburger clicked");
+    });
+  }
+
+  if (close) {
+    close.addEventListener("click", () => {
+      target.style.display = "none";
+      //console.log("Close clicked");
+    });
+  }
+
+  // Dropdown logic
+  const dropdown = document.getElementById("dropdown");
+  const dropdownClose = document.getElementById("dropdown-close");
+  const dropdownList = document.getElementById("dropdown-list");
+
+  if (dropdown) {
+    dropdown.addEventListener("click", () => {
+      dropdownList.classList.remove("display-none");
+    });
+  }
+
+  if (dropdownClose) {
+    dropdownClose.addEventListener("click", () => {
+      dropdownList.classList.add("display-none");
+    });
+  }
+
+});
+
 
 </script>
